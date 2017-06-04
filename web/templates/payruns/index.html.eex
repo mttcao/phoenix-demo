@@ -1,0 +1,30 @@
+<h2>Listing payruns</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Startdate</th>
+      <th>Enddate</th>
+      <th>Payondate</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for payruns <- @payruns do %>
+    <tr>
+      <td><%= payruns.startdate %></td>
+      <td><%= payruns.enddate %></td>
+      <td><%= payruns.payondate %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: payruns_path(@conn, :show, payruns), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: payruns_path(@conn, :edit, payruns), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: payruns_path(@conn, :delete, payruns), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New payruns", to: payruns_path(@conn, :new) %>

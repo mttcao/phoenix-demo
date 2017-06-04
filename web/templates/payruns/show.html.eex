@@ -1,0 +1,23 @@
+<h2>Show payruns</h2>
+
+<ul>
+
+  <li>
+    <strong>Startdate:</strong>
+    <%= @payruns.startdate %>
+  </li>
+
+  <li>
+    <strong>Enddate:</strong>
+    <%= @payruns.enddate %>
+  </li>
+
+  <li>
+    <strong>Payondate:</strong>
+    <%= @payruns.payondate %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: payruns_path(@conn, :edit, @payruns) %>
+<%= link "Back", to: payruns_path(@conn, :index) %>

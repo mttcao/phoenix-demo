@@ -1,0 +1,6 @@
+<h2>New payruns</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: payruns_path(@conn, :create) %>
+
+<%= link "Back", to: payruns_path(@conn, :index) %>
