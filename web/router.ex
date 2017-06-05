@@ -19,7 +19,7 @@ defmodule HelloPhoenix.Router do
     # get "/", PageController, :index
     get "/hello", HelloController, :index
     get "/hello/:messenger", HelloController, :show
-    resources "/management", PayrunsController
+    resources "/management", PayrunController
     # resources "/comments", CommentController, only: [:index, :show]
     # resources "/users", UserController do
       # resources "/posts", PostController

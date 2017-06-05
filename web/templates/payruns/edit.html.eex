@@ -1,6 +1,6 @@
 <h2>Edit payruns</h2>
 
 <%= render "form.html", changeset: @changeset,
-                        action: payruns_path(@conn, :update, @payruns) %>
+                        action: payrun_path(@conn, :update, @payrun) %>
 
-<%= link "Back", to: payruns_path(@conn, :index) %>
+<%= link "Back", to: payrun_path(@conn, :index) %>

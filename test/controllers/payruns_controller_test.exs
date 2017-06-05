@@ -1,66 +1,66 @@
-defmodule HelloPhoenix.PayrunsControllerTest do
+defmodule HelloPhoenix.PayrunControllerTest do
   use HelloPhoenix.ConnCase
 
-  alias HelloPhoenix.Payruns
+  alias HelloPhoenix.Payrun
   @valid_attrs %{enddate: %{day: 17, month: 4, year: 2010}, payondate: %{day: 17, month: 4, year: 2010}, startdate: %{day: 17, month: 4, year: 2010}}
   @invalid_attrs %{}
 
   test "lists all entries on index", %{conn: conn} do
-    conn = get conn, payruns_path(conn, :index)
-    assert html_response(conn, 200) =~ "Listing payruns"
+    conn = get conn, payrun_path(conn, :index)
+    assert html_response(conn, 200) =~ "Listing payrun"
   end
 
   test "renders form for new resources", %{conn: conn} do
-    conn = get conn, payruns_path(conn, :new)
-    assert html_response(conn, 200) =~ "New payruns"
+    conn = get conn, payrun_path(conn, :new)
+    assert html_response(conn, 200) =~ "New payrun"
   end
 
   test "creates resource and redirects when data is valid", %{conn: conn} do
-    conn = post conn, payruns_path(conn, :create), payruns: @valid_attrs
-    assert redirected_to(conn) == payruns_path(conn, :index)
-    assert Repo.get_by(Payruns, @valid_attrs)
+    conn = post conn, payrun_path(conn, :create), payrun: @valid_attrs
+    assert redirected_to(conn) == payrun_path(conn, :index)
+    assert Repo.get_by(Payrun, @valid_attrs)
   end
 
   test "does not create resource and renders errors when data is invalid", %{conn: conn} do
-    conn = post conn, payruns_path(conn, :create), payruns: @invalid_attrs
-    assert html_response(conn, 200) =~ "New payruns"
+    conn = post conn, payrun_path(conn, :create), payrun: @invalid_attrs
+    assert html_response(conn, 200) =~ "New payrun"
   end
 
   test "shows chosen resource", %{conn: conn} do
-    payruns = Repo.insert! %Payruns{}
-    conn = get conn, payruns_path(conn, :show, payruns)
-    assert html_response(conn, 200) =~ "Show payruns"
+    payruns = Repo.insert! %Payrun{}
+    conn = get conn, payrun_path(conn, :show, payrun)
+    assert html_response(conn, 200) =~ "Show payrun"
   end
 
   test "renders page not found when id is nonexistent", %{conn: conn} do
     assert_error_sent 404, fn ->
-      get conn, payruns_path(conn, :show, -1)
+      get conn, payrun_path(conn, :show, -1)
     end
   end
 
   test "renders form for editing chosen resource", %{conn: conn} do
-    payruns = Repo.insert! %Payruns{}
-    conn = get conn, payruns_path(conn, :edit, payruns)
-    assert html_response(conn, 200) =~ "Edit payruns"
+    payruns = Repo.insert! %Payrun{}
+    conn = get conn, payrun_path(conn, :edit, payrun)
+    assert html_response(conn, 200) =~ "Edit payrun"
   end
 
   test "updates chosen resource and redirects when data is valid", %{conn: conn} do
-    payruns = Repo.insert! %Payruns{}
-    conn = put conn, payruns_path(conn, :update, payruns), payruns: @valid_attrs
-    assert redirected_to(conn) == payruns_path(conn, :show, payruns)
-    assert Repo.get_by(Payruns, @valid_attrs)
+    payruns = Repo.insert! %Payrun{}
+    conn = put conn, payrun_path(conn, :update, payrun), payrun: @valid_attrs
+    assert redirected_to(conn) == payrun_path(conn, :show, payrun)
+    assert Repo.get_by(Payrun, @valid_attrs)
   end
 
   test "does not update chosen resource and renders errors when data is invalid", %{conn: conn} do
-    payruns = Repo.insert! %Payruns{}
-    conn = put conn, payruns_path(conn, :update, payruns), payruns: @invalid_attrs
-    assert html_response(conn, 200) =~ "Edit payruns"
+    payruns = Repo.insert! %Payrun{}
+    conn = put conn, payrun_path(conn, :update, payrun), payrun: @invalid_attrs
+    assert html_response(conn, 200) =~ "Edit payrun"
   end
 
   test "deletes chosen resource", %{conn: conn} do
-    payruns = Repo.insert! %Payruns{}
-    conn = delete conn, payruns_path(conn, :delete, payruns)
-    assert redirected_to(conn) == payruns_path(conn, :index)
-    refute Repo.get(Payruns, payruns.id)
+    payruns = Repo.insert! %Payrun{}
+    conn = delete conn, payrun_path(conn, :delete, payrun)
+    assert redirected_to(conn) == payrun_path(conn, :index)
+    refute Repo.get(Payrun, payrun.id)
   end
 end

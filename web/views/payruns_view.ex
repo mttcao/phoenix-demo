@@ -1,3 +1,3 @@
-# defmodule HelloPhoenix.PayrunsView do
+# defmodule HelloPhoenix.PayrunView do
 #   use HelloPhoenix.Web, :view
 # end

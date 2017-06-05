@@ -4,20 +4,20 @@
 
   <li>
     <strong>Startdate:</strong>
-    <%= @payruns.startdate %>
+    <%= @payrun.startdate %>
   </li>
 
   <li>
     <strong>Enddate:</strong>
-    <%= @payruns.enddate %>
+    <%= @payrun.enddate %>
   </li>
 
   <li>
     <strong>Payondate:</strong>
-    <%= @payruns.payondate %>
+    <%= @payrun.payondate %>
   </li>
 
 </ul>
 
-<%= link "Edit", to: payruns_path(@conn, :edit, @payruns) %>
-<%= link "Back", to: payruns_path(@conn, :index) %>
+<%= link "Edit", to: payrun_path(@conn, :edit, @payrun) %>
+<%= link "Back", to: payrun_path(@conn, :index) %>

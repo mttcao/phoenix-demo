@@ -1,5 +1,5 @@
 alias HelloPhoenix.Repo
-alias HelloPhoenix.Payruns
+alias HelloPhoenix.Payrun
 
 defmodule HelloPhoenix.PayrunController do
   use HelloPhoenix.Web, :controller
@@ -17,7 +17,8 @@ defmodule HelloPhoenix.PayrunController do
     #
     # ]
 
-    payruns = Repo.all(Payruns)
+    payruns = Repo.all(Payrun)
+
     json conn, payruns
   end
 
